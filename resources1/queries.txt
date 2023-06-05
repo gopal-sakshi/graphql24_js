@@ -1,0 +1,52 @@
+paste these in localhost:3079/graphiql
+---------------------------------------------------
+{
+   greeting
+   students { id firstName lastName }
+}
+---------------------------------------------------
+{  
+   studentById(id:"S1001") { id firstName lastName }
+}
+---------------------------------------------------
+{
+   students { id fullName }
+}
+---------------------------------------------------
+{
+   students{
+      id firstName
+      collegeId44 { id name location rating }      
+   }
+}
+---------------------------------------------------------
+{
+   spanishWishes (name:"GopAL")
+}
+---------------------------------------------------------
+query jingChak01 ($var11:String!) {
+   sayHello(name:$var11)
+}
+{
+   "var11": "Mohtashim"
+}
+---------------------------------------------------------
+mutation {
+   createStudent12(collegeId:"col-102",firstName:"Dulqer",lastName:"Salman")
+}
+
+mutation {
+   createStudent13(collegeId143:"col-102",
+      firstName:"Fahaad",lastName:"Fasil", email:"fahaad.fasil@gmail.com") {
+         id fullName email
+         collegeId44 { id name}
+      }
+}
+
+mutation doSignUp($input:SignUpInput) {
+   signUp(input:$input)
+}
+{
+   "input":{ "email": "abc@gmail.com", "firstName": "kannan", "password": "pass@1234" }
+}
+---------------------------------------------------------

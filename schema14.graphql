@@ -1,0 +1,52 @@
+# graphQL
+# ----------------------------------------------------------------------
+# enum CacheControlScope {
+#     PUBLIC
+#     PRIVATE
+# }
+
+# directive @cacheControl(
+#     maxAge: Int
+#     scope: CacheControlScope
+#      inheritMaxAge: Boolean
+# ) on FIELD_DEFINITION | OBJECT | INTERFACE | UNION
+
+# type Post {
+#     id: ID!
+#     title: String
+#     author: Author
+#     votes: Int @cacheControl(maxAge: 30)
+#     comments: [Comment]
+#     readByCurrentUser: Boolean! @cacheControl(maxAge: 10, scope: PRIVATE)
+# }
+
+# ----------------------------------------------------------------------
+type Query {
+    greetings: String
+    students: [Student]                         #return array of students
+    student(firstName12: String): Student                    #return student by id
+    getPosts: Post
+}
+
+enum gender23 {
+    MALE
+    FEMALE
+}
+
+# Student object
+type Student {
+    firstName: String
+    lastName: String!           # lastName cant be null
+    gender: gender23!
+    subjects: [String!]!        # non nullabale (both array element) & array itself
+}
+
+scalar Date
+
+# Mutation
+type Mutation {
+    create (firstName: String, lastName: String, gender: gender23, subjects: [String]): Student
+    createWithDate (firstName: String, lastName: String, 
+        gender: gender23, subjects: [String], createdTs23:Date):Student
+    update12 (firstName:String, newLastName:String):Student
+}
