@@ -1,29 +1,21 @@
-paste these in localhost:3079/graphiql
+POST requests in postman
+POST requests in postman
+POST requests in postman
+POST requests in postman
+POST requests in postman
 ---------------------------------------------------
 {
    greeting
    students { id firstName lastName }
-}
----------------------------------------------------
-{  
    studentById(id:"S1001") { id firstName lastName }
-}
----------------------------------------------------
-{
    students { id fullName }
-}
----------------------------------------------------
-{
    students{
       id firstName
       collegeId44 { id name location rating }      
    }
 }
 ---------------------------------------------------------
-{
-   spanishWishes (name:"GopAL")
-}
----------------------------------------------------------
+
 query jingChak01 ($var11:String!) {
    sayHello(name:$var11)
 }

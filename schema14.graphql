@@ -25,7 +25,7 @@ type Query {
     greetings: String
     students: [Student]                         #return array of students
     student(firstName12: String): Student                    #return student by id
-    getPosts: Post
+    # getPosts: Post
 }
 
 enum gender23 {
