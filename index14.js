@@ -16,7 +16,7 @@ import {
 } from '@apollo/server/plugin/landingPage/default';
 import { ApolloServerPluginLandingPageDisabled } from '@apollo/server/plugin/disabled'; 
 /********************************************************************************/
-const MONGO_URI = "mongodb://localhost:27017/student23";
+const MONGO_URI = "mongodb://localhost:27017/graphDb22";
 
 mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => { console.log(`Db Connected`); })
@@ -44,3 +44,4 @@ startStandaloneServer(server, {
 }).then(({ url }) => {
     console.log(`Server ready at ${url}`);
 });
+/********************************************************************************/

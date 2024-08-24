@@ -1,0 +1,20 @@
+[
+    {
+        "firstName": "Narayanarao",
+        "lastName": "Dasari",
+        "gender": "MALE",
+        "subjects": ["drama", "socail issues"] 
+    },
+    {
+        "firstName": "Gopal",
+        "lastName": "B",
+        "gender": "MALE",
+        "subjects": ["faction", "mass"] 
+    },
+    {
+        "firstName": "Nandini",
+        "lastName": "Reddy",
+        "gender": "FEMALE",
+        "subjects": ["comedy", "youthful"] 
+    }
+]

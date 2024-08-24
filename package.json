@@ -4,7 +4,7 @@
     "start1": "node index1.js",
     "start_mongo_wont_work": "\"C:\\Program Files\\MongoDB\\Server\\6.0\\bin\\mongod.exe\" && --dbpath=\"C:\\Program Files\\MongoDB\\mongo_databases23\"",
     "start2": "node index2.js",
-    "start_prod":"SET NODE_ENV=production && node index14.js"
+    "start_prod":"node index14.js"
   },
   "dependencies": {
     "@apollo/server": "^4.5.0",
