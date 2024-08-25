@@ -25,4 +25,5 @@ all GraphQL requests for a given service should be directed at this endpoint
 
 `GraphiQL`
 - useful during testing & development but should be disabled in production
-- 
+
+-----------------------------------------------------------------------------------------------------

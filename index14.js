@@ -1,14 +1,9 @@
-// const { ApolloServer } = require("@apollo/server");
-// const { startStandaloneServer } = require("@apollo/server/standalone");
-// const { resolvers } = require("./resolvers.js");
-// const { typeDefs } = require("./models/typeDefs.js");
-
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone'
 import fs from 'fs';
-import resolvers from './resolvers14.js';
+import resolvers from './index14_resolvers_1.js';
 import mongoose from "mongoose";
-const typeDefs2 = fs.readFileSync('schema14.graphql', { encoding: 'utf-8'});
+const typeDefs2 = fs.readFileSync('index14_schema_1.graphql', { encoding: 'utf-8'});
 const resolvers2 = resolvers;
 import {
     ApolloServerPluginLandingPageLocalDefault,
@@ -26,7 +21,7 @@ mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 /********************************************************************************/
 const server = new ApolloServer({ 
     typeDefs:typeDefs2, 
-    resolvers:resolvers2,
+    resolvers,
     // plugins: [
     //     process.env.NODE_ENV === 'production'
     //       ? ApolloServerPluginLandingPageProductionDefault()
@@ -40,7 +35,7 @@ startStandaloneServer(server, {
     context: async ({ req, res }) => ({
         authScope12: req.headers.auth23,
     }),
-    listen: { port: 3081 },
+    listen: { port: 3014 },
 }).then(({ url }) => {
     console.log(`Server ready at ${url}`);
 });

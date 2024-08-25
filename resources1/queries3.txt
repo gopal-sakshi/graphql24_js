@@ -1,3 +1,0 @@
-query query33 {
-  books { title author }
-}

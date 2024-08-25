@@ -1,16 +1,16 @@
 {
   "type": "module",
   "scripts": {
-    "start1": "node index1.js",
-    "start_mongo_wont_work": "\"C:\\Program Files\\MongoDB\\Server\\6.0\\bin\\mongod.exe\" && --dbpath=\"C:\\Program Files\\MongoDB\\mongo_databases23\"",
-    "start2": "node index2.js",
-    "start_prod":"node index14.js"
+    "start11": "node index11.js",
+    "start12": "node index12.js",
+    "start14": "node index14.js"
   },
   "dependencies": {
     "@apollo/server": "^4.5.0",
     "apollo-datasource-mongodb": "^0.5.4",
     "graphql": "^16.6.0",
     "graphql-http": "^1.18.0",
+    "graphql-playground-middleware-express": "^1.7.23",
     "graphql-tag": "^2.12.6",
     "mongoose": "^7.1.1",
     "notarealdb": "^0.2.2"
