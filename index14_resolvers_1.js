@@ -1,5 +1,15 @@
-import { Student } from "./index14_student.js";
-import { dateScalar } from "./scalarDate.js";
+import mongoose from "mongoose";
+import { dateScalar } from './index14_scalarDate.js';
+
+let studentSchema = new mongoose.Schema({
+    firstName: String,
+    lastName: String,
+    gender: String,
+    subjects: [String]    
+}, { strict: false });
+
+const Student = mongoose.model("Student", studentSchema);
+
 import { GraphQLError } from "graphql";
 
 const resolvers = {
@@ -19,6 +29,7 @@ const resolvers = {
             const { firstName, lastName, gender, subjects, createdTs23} = args;
             const newStudent = new Student({firstName, lastName, gender, subjects, createdTs23});
             await newStudent.save();
+            console.log("new student ===> ", newStudent);
             return newStudent;
         },
         update12: async (parent, args, contextValue, info) => {
@@ -31,7 +42,7 @@ const resolvers = {
                 {firstName: firstName}, {lastName: newLastName}, { new:true })
         }
     },
-    Date: dateScalar
+    Date123: dateScalar
 };
 
 export default resolvers;

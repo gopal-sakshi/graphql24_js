@@ -22,15 +22,16 @@ type Student {
     lastName: String!           # lastName cant be null
     gender: gender23!
     subjects: [String!]!        # non nullabale (both array element) & array itself
+    createdTs23: Date123            ### can be nullable
 }
 
-scalar Date
+scalar Date123
 
 # Mutation
 type Mutation {
     create (firstName: String, lastName: String, gender: gender23, subjects: [String]): Student
     createWithDate (firstName: String, lastName: String, 
-        gender: gender23, subjects: [String], createdTs23:Date):Student
+        gender: gender23, subjects: [String], createdTs23:Date123):Student
     update12 (firstName:String, newLastName:String):Student
 }
 

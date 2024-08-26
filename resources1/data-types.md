@@ -18,26 +18,33 @@ type Student {
     score:Float
 }
 ------------------------------------------------------------------------------------
+## Query, Mutation, Subscription
 
 `Query`
-    Entry point type to other specific types
-    It is like requesting a resource in REST-based APIs
+Entry point type to other specific types
+It is like requesting a resource in REST-based APIs
 
 type Query {
     field1: data_type
     field2:data_type
     field2 (param1:data_type, param2:data_type) : data_type
 }
-------------------------------------------------------------------------------------
 
 `Mutation`
-    operations sent to the server to create, update, delete data.
+operations sent to the server to create, update, delete data.
 
 type Mutation {
     field1: data_type
     field2(param1:data_type, param2:data_type) : data_type 
 }
-------------------------------------------------------------------------------------
+
+`Subscription`
+In majority cases --- dont use subscriptions; instead poll intermittently (or) re-execute queries
+But use subscriptions
+    small, incremental changes to large objects
+    low-latency, real-time updates (chat application)
+
+<!-- ------------------------------------------------------------------------------------ -->
 
 `Enum`
     Useful in a situation where you need the user to pick from a prescribed list of options
