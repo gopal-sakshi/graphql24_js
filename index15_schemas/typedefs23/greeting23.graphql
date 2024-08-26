@@ -1,0 +1,8 @@
+type Query {
+    spanishHello: String
+    frenchThanQ: String
+}
+ 
+type Mutation {
+    addGreeting(msg: String!, lang: String!): String!
+}

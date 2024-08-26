@@ -3,14 +3,17 @@ import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone'
 import fs from 'fs';
 
-const typeDefs2 = fs.readFileSync('index15_schema1.graphql', { encoding: 'utf-8'});
-import resolvers from './index15_resolvers1.js';
+
+// Not able to load resolvers using loadFilesSync #2130
+// https://github.com/ardatan/graphql-tools/issues/1750
+// something with '@graphql-tools/merge' ===> NodeJS, ESM support something
+import { typeDefs23, resolvers23 } from './index15_schemas/index.js';
 
 /********************************************************************************/
 
 const server = new ApolloServer({ 
-    typeDefs:typeDefs2, 
-    resolvers,
+    typeDefs:typeDefs23, 
+    resolvers: resolvers23,
     allowBatchedHttpRequests: true
 });
 
