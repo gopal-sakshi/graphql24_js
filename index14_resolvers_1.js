@@ -15,7 +15,15 @@ import { GraphQLError } from "graphql";
 const resolvers = {
     Query: { 
         greetings: () => "GraphQL is Awesome",
-        students: async () => await Student.find({}),
+        namaste24: () => ({ name: 'RealMadrid', stadium: 'Bernabeu', manager: 'Ancelotti' }),
+        // this students ---> is used by graphQL25 client12 REPO === DONT DELETE
+        students: async () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(async () => {
+                    resolve(await Student.find({}))
+                }, 100)
+            })
+        },
         student: async(parent, args) => await Student.findOne({firstName: args.firstName12})
     },
     Mutation: {

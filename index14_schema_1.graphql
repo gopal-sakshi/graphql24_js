@@ -4,8 +4,16 @@
 # clients can execute, along with the return type for each. 
 # In this case, the "books12" query returns an array of zero or more Books
 # ----------------------------------------------------------------------
+
+type json23 {
+    name: String,
+    stadium: String,
+    manager: String
+}
+
 type Query {
     greetings: String
+    namaste24: json23             ### client12 kosam ---> oka json return ayyettu pettaamu
     students: [Student]                         #return array of students
     student(firstName12: String): Student       #return student by id
     # getPosts: Post
@@ -18,6 +26,7 @@ enum gender23 {
 
 # Student object -- type defines the queryable fields for every "Student" in our data source.
 type Student {
+    id: ID!
     firstName: String
     lastName: String!           # lastName cant be null
     gender: gender23!
