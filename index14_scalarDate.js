@@ -1,5 +1,12 @@
 import { GraphQLScalarType, Kind } from 'graphql';
 
+/*
+    https://the-guild.dev/graphql/tools/docs/scalars         ====> only ODD values to be stored in db
+    
+    graphql-scalars ---> some scalarTypes provided by this library
+    - DateTime, PositiveInt, NonNegativeFloat, EmailAddress, PostalCode, PhoneNumber
+    https://www.npmjs.com/package/graphql-scalars
+*/
 const dateScalar = new GraphQLScalarType({
     name: 'Date111',
     description: 'customScalarType23',
