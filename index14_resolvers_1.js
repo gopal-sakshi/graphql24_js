@@ -17,10 +17,11 @@ const resolvers = {
         greetings: () => "GraphQL is Awesome",
         namaste24: () => ({ name: 'RealMadrid', stadium: 'Bernabeu', manager: 'Ancelotti' }),
         // this students ---> is used by graphQL25 client12 REPO === DONT DELETE
-        students: async () => {
+        students: async (parent, args) => {
             return new Promise((resolve, reject) => {
                 setTimeout(async () => {
-                    resolve(await Student.find({}))
+                    // resolve(await Student.find({}))
+                    resolve(await Student.find({}).sort(args.orderBy))
                 }, 100)
             })
         },

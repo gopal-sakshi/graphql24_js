@@ -10,11 +10,20 @@ type json23 {
     stadium: String,
     manager: String
 }
+enum SortingOrder23 { 
+    ASC
+    DSC 
+}
+input StOrder23 {       ## this is StOrder23 ===> student order
+    firstName: SortingOrder23 
+    gender: SortingOrder23 
+}
 
 type Query {
     greetings: String
     namaste24: json23             ### client12 kosam ---> oka json return ayyettu pettaamu
-    students: [Student]                         #return array of students
+    # students: [Student]                         #return array of students
+    students(orderBy: StOrder23): [Student]     ## implement sorting
     student(firstName12: String): Student       #return student by id
     # getPosts: Post
 }
